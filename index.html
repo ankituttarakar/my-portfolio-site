@@ -84,7 +84,6 @@
     <!-- Scrolling Indicator -->
     <div id="scroll-indicator" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-fuchsia-500 z-50 transition-all duration-100"></div>
 
-    <!-- Header & Navigation (Fixed) -->
     <header id="navbar" class="fixed top-0 left-0 w-full p-4 z-40 bg-[rgba(11,11,20,0.8)] backdrop-blur-sm border-b border-cyan-500/30">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <h1 class="text-xl font-bold text-cyan-400 text-neon-glow">AU</h1>
@@ -99,20 +98,28 @@
 
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
 
-        <!-- 1. Hero Section -->
-        <section id="home" class="h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center -mt-2 neon-gradient-bg border-neon-glow rounded-3xl mb-24 p-8">
-            <div class="scroll-animate">
-                <h2 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 uppercase text-white tracking-tighter text-neon-glow" style="--tw-shadow-color: var(--neon-blue); text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);">
-                    Ankit Uttarakar<img src="blueme1.jpg" alt="Ankit Uttarakar" class="rounded-full w-32 h-32 md:w-48 md:h-48 mx-auto mb-6 border-4 border-cyan-400 shadow-lg" style="box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-pink);">
-                </h2>
-              <p class="text-xl md:text-3xl font-light mb-12 text-red-400 text-neon-glow" style="text-shadow: 0 0 3px var(--neon-pink);">
-               Frontend Developer | Modern UI/UX Enthusiast | Cloud Deployment Explorer
-                  </p>
-                <a href="#projects" class="neon-btn text-lg md:text-xl font-semibold text-white px-8 py-3 rounded-full uppercase tracking-wider block mx-auto w-fit">
-                    View Work
-                </a>
-            </div>
-        </section>
+<!-- 1. Hero Section -->
+      <section id="home" class="h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center -mt-2 neon-gradient-bg border-neon-glow rounded-3xl mb-24 p-8">
+        <div class="scroll-animate">
+        <!-- Name (Moved out of H2 and given margin-bottom) -->
+        <h2 class="text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase text-white tracking-tighter text-neon-glow mb-6" style="--tw-shadow-color: var(--neon-blue); text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);">
+            Ankit Uttarakar
+        </h2>
+        
+        <!-- Photo (Now a standalone element, not inside H2) -->
+        <img src="blueme1.jpg" alt="Ankit Uttarakar" class="rounded-full w-32 h-32 md:w-48 md:h-48 mx-auto mb-6 border-4 border-cyan-400 shadow-lg" style="box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-pink);">
+        
+        <!-- Tagline (Already below the image) -->
+        <p class="text-xl md:text-3xl font-light mb-12 text-red-400 text-neon-glow" style="text-shadow: 0 0 3px var(--neon-pink);">
+            Frontend Developer | Modern UI/UX Enthusiast | Cloud Deployment Explorer
+        </p>
+        
+        <a href="#projects" class="neon-btn text-lg md:text-xl font-semibold text-white px-8 py-3 rounded-full uppercase tracking-wider block mx-auto w-fit">
+            View Work
+        </a>
+    </div>
+  </section>
+
 
         <!-- 2. Skills Section -->
         <section id="skills" class="py-20">
@@ -137,11 +144,10 @@
                         <span class="text-3xl mb-2 block" style="color: var(--neon-blue);">⛭</span>
                         <p class="font-semibold text-white text-neon-glow">Node.js / APIs</p>
                     </div>
-                    <!-- Insert this inside the <div class="grid..."> of the #skills section -->
 
                     <div class="card-neon-glow p-6 rounded-xl bg-[rgba(0,255,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(255,0,255,0.1)]">
                         <span class="text-3xl mb-2 block" style="color: var(--neon-blue);">⛭</span>
-                        <p class="font-semibold text-white text-neon-glow">Git / Advanced Version Control</p>
+                        <p class="font-semibold text-white text-neon-glow">Git and Advanced Version Control</p>
                     </div>
                     <div class="card-neon-glow p-6 rounded-xl bg-[rgba(255,0,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(0,255,255,0.1)]">
                         <span class="text-3xl mb-2 block" style="color: var(--neon-pink);">⛭</span>
@@ -207,7 +213,7 @@
                 <p class="text-lg mb-8 text-gray-400">If you are looking for an architect who can bring bold, interactive visions to life, my inbox is always open.</p>
 
                 <div class="flex justify-center items-center space-x-12 mb-12">
-                    <!-- GitHub Link Container (flex-col ensures vertical stacking) -->
+                    <!-- GitHub Link Container -->
                     <div class="flex flex-col items-center group">
                         <a href="https://github.com/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="GitHub">
                             <span style="color: var(--neon-blue);">
@@ -218,7 +224,7 @@
                         <p class="text-sm font-semibold text-cyan-400 text-neon-glow transition-colors duration-300 group-hover:text-white">GitHub</p>
                     </div>
 
-                    <!-- LinkedIn Link Container (flex-col ensures vertical stacking) -->
+                    <!-- LinkedIn Link Container -->
                     <div class="flex flex-col items-center group">
                         <a href="https://www.linkedin.com/in/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="LinkedIn">
                             <span style="color: var(--neon-pink);">
@@ -229,7 +235,7 @@
                         <p class="text-sm font-semibold text-pink-400 text-neon-glow transition-colors duration-300 group-hover:text-white">LinkedIn
                         </p>
                     </div>
-                    <!-- X Link Container (flex-col ensures vertical stacking) -->
+                    <!-- X Link Container -->
                     <div class="flex flex-col items-center group">
                         <a href="https://twitter.com/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="X">
                             <span style="color: var(--neon-green);">
