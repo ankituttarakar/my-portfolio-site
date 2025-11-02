@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ankit Uttarakar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Define custom colors and shadows for consistency and reuse */
+        :root {
+            --bg-dark: #0B0B14;
+            --neon-blue: #00FFFF;
+            --neon-pink: #FF00FF;
+            --text-color: #E0E0E0;
+            --neon-green: #39ff14; /* Added neon green for Twitter icon */
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden; /* Prevent horizontal scrolling from animations */
+        }
+
+        /* Custom glow classes */
+        .text-neon-glow {
+            text-shadow: 0 0 4px var(--neon-blue), 0 0 10px var(--neon-pink);
+        }
+
+        .border-neon-glow, .card-neon-glow {
+            border: 1px solid rgba(0, 255, 255, 0.5);
+            box-shadow: 0 0 8px var(--neon-blue), 0 0 20px rgba(255, 0, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        /* Hover effects */
+        .card-neon-glow:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 25px var(--neon-pink);
+        }
+        
+        /* Neon Button Base */
+        .neon-btn {
+            background-color: rgba(0, 255, 255, 0.1);
+            border: 1px solid var(--neon-blue);
+            box-shadow: 0 0 8px var(--neon-blue);
+            transition: all 0.3s ease;
+        }
+
+        /* Neon Button Hover Effect */
+        .neon-btn:hover {
+            background-color: rgba(255, 0, 255, 0.2);
+            box-shadow: 0 0 10px var(--neon-blue), 0 0 25px var(--neon-pink);
+            transform: scale(1.05);
+        }
+
+        /* Breathing Gradient Animation */
+        @keyframes neon-gradient-pulse {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .neon-gradient-bg {
+            background: radial-gradient(circle at center, rgba(0, 255, 255, 0.1), rgba(255, 0, 255, 0.1), rgba(11, 11, 20, 1));
+            background-size: 200% 200%;
+            animation: neon-gradient-pulse 10s ease infinite;
+        }
+
+        /* Scroll Animation Target */
+        .scroll-animate {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+        }
+        .scroll-animate.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Scrolling Indicator -->
+    <div id="scroll-indicator" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-cyan-400 to-fuchsia-500 z-50 transition-all duration-100"></div>
+
+    <!-- Header & Navigation (Fixed) -->
+    <header id="navbar" class="fixed top-0 left-0 w-full p-4 z-40 bg-[rgba(11,11,20,0.8)] backdrop-blur-sm border-b border-cyan-500/30">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <h1 class="text-xl font-bold text-cyan-400 text-neon-glow">AU</h1>
+            <nav class="space-x-4">
+                <a href="#home" class="text-sm font-medium hover:text-cyan-400 transition duration-300 text-neon-glow">Home</a>
+                <a href="#skills" class="text-sm font-medium hover:text-cyan-400 transition duration-300 text-neon-glow">Skills</a>
+                <a href="#projects" class="text-sm font-medium hover:text-cyan-400 transition duration-300 text-neon-glow">Projects</a>
+                <a href="#contact" class="text-sm font-medium hover:text-cyan-400 transition duration-300 text-neon-glow">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20">
+
+        <!-- 1. Hero Section -->
+        <section id="home" class="h-[calc(100vh-80px)] flex flex-col justify-center items-center text-center -mt-2 neon-gradient-bg border-neon-glow rounded-3xl mb-24 p-8">
+            <div class="scroll-animate">
+                <h2 class="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-4 uppercase text-white tracking-tighter text-neon-glow" style="--tw-shadow-color: var(--neon-blue); text-shadow: 0 0 20px rgba(0, 255, 255, 0.8), 0 0 40px rgba(255, 0, 255, 0.6);">
+                    Ankit Uttarakar<img src="blueme1.jpg" alt="Ankit Uttarakar" class="rounded-full w-32 h-32 md:w-48 md:h-48 mx-auto mb-6 border-4 border-cyan-400 shadow-lg" style="box-shadow: 0 0 15px var(--neon-blue), 0 0 30px var(--neon-pink);">
+                </h2>
+              <p class="text-xl md:text-3xl font-light mb-12 text-red-400 text-neon-glow" style="text-shadow: 0 0 3px var(--neon-pink);">
+               Frontend Developer | Modern UI/UX Enthusiast | Cloud Deployment Explorer
+                  </p>
+                <a href="#projects" class="neon-btn text-lg md:text-xl font-semibold text-white px-8 py-3 rounded-full uppercase tracking-wider block mx-auto w-fit">
+                    View Work
+                </a>
+            </div>
+        </section>
+
+        <!-- 2. Skills Section -->
+        <section id="skills" class="py-20">
+            <div class="scroll-animate">
+                <h2 class="text-4xl font-bold mb-12 text-cyan-400 text-neon-glow text-center">CORE SKILL MATRIX</h2>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6 justify-center">
+                    <!-- Skill Card Component -->
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(0,255,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(255,0,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-blue);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">React</p>
+                    </div>
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(255,0,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(0,255,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-pink);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">Tailwind CSS</p>
+                    </div>
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(255,0,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(0,255,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-pink);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">Figma</p>
+                    </div>
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(0,255,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(255,0,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-blue);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">Node.js / APIs</p>
+                    </div>
+                    <!-- Insert this inside the <div class="grid..."> of the #skills section -->
+
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(0,255,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(255,0,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-blue);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">Git / Advanced Version Control</p>
+                    </div>
+                    <div class="card-neon-glow p-6 rounded-xl bg-[rgba(255,0,255,0.05)] text-center transition-all duration-300 hover:bg-[rgba(0,255,255,0.1)]">
+                        <span class="text-3xl mb-2 block" style="color: var(--neon-pink);">⛭</span>
+                        <p class="font-semibold text-white text-neon-glow">MongoDB</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="scroll-animate">
+                <h2 class="text-4xl font-bold mb-12 text-pink-400 text-neon-glow text-center">PROJECT SYNERGY</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    
+                    <!-- Project Card 1 -->
+                    <div class="card-neon-glow p-6 rounded-2xl neon-gradient-bg flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3 text-cyan-300 text-neon-glow">BiasShield – Bias Free Firewall</h3>
+                            <p class="text-gray-300 mb-4">BiasShield AI is a smart firewall that detects and blocks biased or discriminatory filters.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">Python</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">Natural Language Processing (NLP)</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">REST API</span>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="card-neon-glow p-6 rounded-2xl neon-gradient-bg flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3 text-pink-300 text-neon-glow">Gold_Price_Predictor</h3>
+                            <p class="text-gray-300 mb-4">A machine learning–powered Flask app that predicts gold prices with a clean, deployable interface.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pink-600/30 text-pink-300 text-neon-glow border border-pink-500">Machine Learning with Python </span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pink-600/30 text-pink-300 text-neon-glow border border-pink-500"> Full-Stack Web Development</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-pink-600/30 text-pink-300 text-neon-glow border border-pink-500">API Design & Integration</span> 
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="card-neon-glow p-6 rounded-2xl neon-gradient-bg flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-2xl font-bold mb-3 text-cyan-300 text-neon-glow">Profile Creator</h3>
+                            <p class="text-gray-300 mb-4">Simple, single-page web application that allows users to create and preview their personal profile.</p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4">
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">HTML</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">Cascading Style Sheets (CSS)</span>
+                            <span class="text-xs font-semibold px-3 py-1 rounded-full bg-cyan-600/30 text-cyan-300 text-neon-glow border border-cyan-500">JavaScript</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact/Footer Section -->
+        <section id="contact" class="py-20">
+            <div class="scroll-animate max-w-2xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6 text-pink-400 text-neon-glow">LET'S CONNECT</h2>
+                <p class="text-lg mb-8 text-gray-400">If you are looking for an architect who can bring bold, interactive visions to life, my inbox is always open.</p>
+
+                <div class="flex justify-center items-center space-x-12 mb-12">
+                    <!-- GitHub Link Container (flex-col ensures vertical stacking) -->
+                    <div class="flex flex-col items-center group">
+                        <a href="https://github.com/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="GitHub">
+                            <span style="color: var(--neon-blue);">
+                                <!-- Mock GitHub Icon (Unicode: Star Outline) -->
+                                &#9881;
+                            </span>
+                        </a>
+                        <p class="text-sm font-semibold text-cyan-400 text-neon-glow transition-colors duration-300 group-hover:text-white">GitHub</p>
+                    </div>
+
+                    <!-- LinkedIn Link Container (flex-col ensures vertical stacking) -->
+                    <div class="flex flex-col items-center group">
+                        <a href="https://www.linkedin.com/in/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="LinkedIn">
+                            <span style="color: var(--neon-pink);">
+                                <!-- Mock LinkedIn Icon (Unicode: Solid Star) -->
+                                &#x1F517;
+                            </span>
+                        </a>
+                        <p class="text-sm font-semibold text-pink-400 text-neon-glow transition-colors duration-300 group-hover:text-white">LinkedIn
+                        </p>
+                    </div>
+                    <!-- X Link Container (flex-col ensures vertical stacking) -->
+                    <div class="flex flex-col items-center group">
+                        <a href="https://twitter.com/ankituttarakar" target="_blank" class="neon-btn p-4 rounded-full text-2xl mb-2" aria-label="X">
+                            <span style="color: var(--neon-green);">
+                                <!-- Mock X Icon  -->
+                                &#x0058;
+                            </span>
+                        </a>
+                        <p class="text-sm font-semibold text-green-400 text-neon-glow transition-colors duration-300 group-hover:text-white">X
+                        </p>
+                    </div>
+                </div>
+
+                
+                <p class="neon-btn text-lg font-semibold text-white px-8 py-3 rounded-full lowercase tracking-wider block mx-auto w-fit">
+                    ankit.uttarakar@gmail.com
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="text-center py-6 text-sm text-gray-600 mt-20 border-t border-cyan-500/10">
+        &copy; 2025 Ankit Uttarakar. All rights reserved.
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            /* --- 2. Scroll Indicator Logic --- */
+            const scrollIndicator = document.getElementById('scroll-indicator');
+
+            function updateScrollIndicator() {
+                const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const scrolled = window.scrollY;
+                const percentage = (scrolled / scrollableHeight) * 100;
+
+                scrollIndicator.style.width = `${percentage}%`;
+            }
+
+            window.addEventListener('scroll', updateScrollIndicator);
+            updateScrollIndicator(); // Initial call
+
+            /* --- 3. Section Scroll-Animate Logic (Intersection Observer) --- */
+            const sections = document.querySelectorAll('.scroll-animate');
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Stop observing once visible
+                    }
+                });
+            }, {
+                rootMargin: '0px',
+                threshold: 0.1
+            });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            /* --- 4. Smooth Scrolling for Navigation --- */
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
